@@ -1,5 +1,6 @@
 GUI\Sale.class
 GUI\ClientsHistory.class
+GUI\loginGUI$1.class
 Queries\QuoteQuery.class
 GUI\ClientsHistory$1.class
 GUI\ClientsHistory$3.class
