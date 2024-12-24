@@ -13,9 +13,12 @@ public class MainDashboard extends JFrame implements ActionListener {
 
     public MainDashboard() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         super("Main Dashboard");
         ImageIcon frameIcon = new ImageIcon("Logo-cut.png");
 =======
+=======
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
         super("Quota Live - Main Dashboard");
         // Load the frame logo
         ImageIcon frameIcon = new ImageIcon(getClass().getResource("/Logo-cut.png"));
@@ -45,6 +48,9 @@ public class MainDashboard extends JFrame implements ActionListener {
         btnManageClients.addActionListener(this);
         btnLogout.addActionListener(this);
         
+<<<<<<< HEAD
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
+=======
 >>>>>>> parent of 42523fe (Revert "fixed a few classes")
 
         // Set up the GUI
@@ -83,11 +89,14 @@ public class MainDashboard extends JFrame implements ActionListener {
         if(e.getSource() == btnCreateQuotation){
             dispose();
 <<<<<<< HEAD
+<<<<<<< HEAD
             new QuoteForm();
         } else if (e.getSource() == btnLogout) {
             System.exit(0);
 
 =======
+=======
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
             new QuoteForm();  
         } else if (e.getSource() == btnLogout) {
             System.exit(0);
@@ -96,6 +105,9 @@ public class MainDashboard extends JFrame implements ActionListener {
         } else if(e.getSource() == btnManageClients){
             dispose();
             new ClientsHistory();
+<<<<<<< HEAD
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
+=======
 >>>>>>> parent of 42523fe (Revert "fixed a few classes")
         }
 
@@ -103,5 +115,8 @@ public class MainDashboard extends JFrame implements ActionListener {
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
+=======
 >>>>>>> parent of 42523fe (Revert "fixed a few classes")
 }
