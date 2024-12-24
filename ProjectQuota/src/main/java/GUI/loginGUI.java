@@ -30,8 +30,11 @@ public class loginGUI extends JFrame implements ActionListener {
         // Set custom frame icon
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ImageIcon frameIcon = new ImageIcon("Logo-cut.png");
 =======
+=======
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
 =======
 >>>>>>> parent of 42523fe (Revert "fixed a few classes")
         ImageIcon frameIcon = new ImageIcon(getClass().getResource("/Logo-cut.png"));
