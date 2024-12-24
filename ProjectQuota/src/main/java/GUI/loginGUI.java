@@ -2,6 +2,7 @@ package GUI;
 
 import DatabaseConnection.DBConnection;
 import Queries.EmployeeQueries;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,11 +11,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.InetAddress;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class loginGUI extends JFrame implements ActionListener {
 
@@ -28,17 +25,7 @@ public class loginGUI extends JFrame implements ActionListener {
         super("Quota Live - Login");
 
         // Set custom frame icon
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        ImageIcon frameIcon = new ImageIcon("Logo-cut.png");
-=======
-=======
->>>>>>> parent of 42523fe (Revert "fixed a few classes")
-=======
->>>>>>> parent of 42523fe (Revert "fixed a few classes")
         ImageIcon frameIcon = new ImageIcon(getClass().getResource("/Logo-cut.png"));
->>>>>>> parent of 42523fe (Revert "fixed a few classes")
         setIconImage(frameIcon.getImage());
 
         // Initialize Panels
@@ -49,7 +36,7 @@ public class loginGUI extends JFrame implements ActionListener {
         pnlCenter = new JPanel();
 
         // Load and scale the image
-        ImageIcon originalIcon = new ImageIcon("Logo-cut.png");
+        ImageIcon originalIcon = new ImageIcon(getClass().getResource("/Logo-cut.png"));
         Image scaledImage = originalIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         lblTitle = new JLabel(new ImageIcon(scaledImage), SwingConstants.CENTER);
 
@@ -64,11 +51,9 @@ public class loginGUI extends JFrame implements ActionListener {
         databaseBtn = new JButton("Start Database");
 
         alchemLL = new JLabel("Developed by Alchemy Studio @Franco Lukhele with JAVA");
-        // Set the font style to italic and make it smaller
-        alchemLL.setFont(new Font("Arial", Font.ITALIC, 12));  // 12 is the font size, adjust as needed
+        alchemLL.setFont(new Font("Arial", Font.ITALIC, 12)); // Font size is adjustable
+        alchemLL.setForeground(Color.GRAY);
 
-// Optionally, you can also set the color
-        alchemLL.setForeground(Color.GRAY);  // Set color to gray, adjust as needed
         llempty1 = new JLabel(" ");
 
         // Add Action Listeners
@@ -83,20 +68,17 @@ public class loginGUI extends JFrame implements ActionListener {
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                deleteFileOnClose(); // Call the method to delete the file
+                deleteFileOnClose();
             }
         });
     }
 
-    // Method to delete the file when the application is closed
     public void deleteFileOnClose() {
         File file = new File("logged_in_user.txt");
-        if (file.exists()) {
-            if (file.delete()) {
-                System.out.println("File deleted successfully.");
-            } else {
-                System.out.println("Failed to delete the file.");
-            }
+        if (file.exists() && file.delete()) {
+            System.out.println("File deleted successfully.");
+        } else {
+            System.out.println("Failed to delete the file.");
         }
     }
 
@@ -138,16 +120,13 @@ public class loginGUI extends JFrame implements ActionListener {
             String username = usernameField.getText();
             String password = new String(passwordField.getPassword());
 
-            // Verify the login credentials using EmployeeQueries
             boolean isValid = EmployeeQueries.verifyLogin(username, password);
 
             if (isValid) {
-                // If login is successful, write the username to a file and show the main dashboard
-                writeToFile(username);  // Write the username to file
-                new MainDashboard();  // Assuming MainDashboard is another JFrame
-                dispose();  // Close the login window
+                writeToFile(username);
+                new MainDashboard(); // Assuming MainDashboard is another JFrame
+                dispose();
             } else {
-                // If login is unsuccessful, show an error message
                 JOptionPane.showMessageDialog(this, "Invalid username or password. Please try again.", "Login Failed", JOptionPane.ERROR_MESSAGE);
             }
         } else if (e.getSource() == signupBtn) {
@@ -155,10 +134,8 @@ public class loginGUI extends JFrame implements ActionListener {
             new SignUpGUI();
         } else if (e.getSource() == databaseBtn) {
             try {
-                // Get the connection to the database via DBConnection class
                 Connection conn = DBConnection.getConnection();
 
-                // If the connection is successful, show a message
                 if (conn != null) {
                     JOptionPane.showMessageDialog(null, "Database and server started successfully!");
                 }
@@ -166,7 +143,6 @@ public class loginGUI extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Failed to start the server or connect to the database: " + ex.getMessage());
             }
         }
-
     }
 
     private void writeToFile(String username) {
@@ -179,7 +155,6 @@ public class loginGUI extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        // Start the login GUI
         new loginGUI();
     }
 }

@@ -1,7 +1,7 @@
-Sun Dec 22 17:54:02 SAST 2024 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Tue Dec 24 13:46:18 SAST 2024 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Sun Dec 22 17:54:05 SAST 2024:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0193-ef13-58a8-00000ed05c98 
+Tue Dec 24 13:46:20 SAST 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0193-f87d-4188-00000ed09aa8 
 on database directory C:\Users\Franco\Documents\GitHub\ProjectQuota\ProjectQuota\QuotaDatabase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@70dea4e 
 Loaded from file:/C:/Users/Franco/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
@@ -12,7 +12,7 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
-Sun Dec 22 17:54:23 SAST 2024 : Could not listen on port 1527 on host 127.0.0.1:
+Tue Dec 24 13:46:29 SAST 2024 : Could not listen on port 1527 on host 127.0.0.1:
  java.net.BindException: Address already in use: bind
 An exception was thrown during network server startup. DRDA_ListenPort.S:Could not listen on port 1527 on host 127.0.0.1:
  java.net.BindException: Address already in use: bind
