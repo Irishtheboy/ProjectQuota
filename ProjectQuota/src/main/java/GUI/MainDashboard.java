@@ -12,8 +12,14 @@ public class MainDashboard extends JFrame implements ActionListener {
     JButton btnManageClients, btnCreateQuotation, btnViewSales, btnLogout;
 
     public MainDashboard() {
+<<<<<<< HEAD
         super("Main Dashboard");
         ImageIcon frameIcon = new ImageIcon("Logo-cut.png");
+=======
+        super("Quota Live - Main Dashboard");
+        // Load the frame logo
+        ImageIcon frameIcon = new ImageIcon(getClass().getResource("/Logo-cut.png"));
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
         setIconImage(frameIcon.getImage());
 
         // Initialize Panels
@@ -33,13 +39,22 @@ public class MainDashboard extends JFrame implements ActionListener {
         btnLogout = new JButton("Logout");
 
         btnCreateQuotation.addActionListener(this);
+<<<<<<< HEAD
+=======
+        btnViewSales.addActionListener(this);
+        btnManageClients.addActionListener(this);
+        btnLogout.addActionListener(this);
+        
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
 
         // Set up the GUI
         setGUI();
     }
 
     public void setGUI() {
-        setSize(600, 400);
+       setExtendedState(JFrame.MAXIMIZED_BOTH);  
+        //setUndecorated(true);  
+        //setSize(900, 900);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -67,11 +82,26 @@ public class MainDashboard extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == btnCreateQuotation){
             dispose();
+<<<<<<< HEAD
             new QuoteForm();
         } else if (e.getSource() == btnLogout) {
             System.exit(0);
 
+=======
+            new QuoteForm();  
+        } else if (e.getSource() == btnLogout) {
+            System.exit(0);
+        } else if (e.getSource() == btnViewSales) {
+            JOptionPane.showMessageDialog(null,"Well to be honest i dunno what this is even for lol...");
+        } else if(e.getSource() == btnManageClients){
+            dispose();
+            new ClientsHistory();
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
         }
 
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 42523fe (Revert "fixed a few classes")
 }
