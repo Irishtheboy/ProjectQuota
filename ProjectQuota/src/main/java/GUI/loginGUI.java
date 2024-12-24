@@ -16,10 +16,8 @@ public class loginGUI extends JFrame implements ActionListener {
         super("Quota Live - Login");
 
         // Set custom frame icon
-        // Load the frame logo
-        ImageIcon frameIcon = new ImageIcon(getClass().getResource("/Logo-cut.png"));
+        ImageIcon frameIcon = new ImageIcon("Logo-cut.png");
         setIconImage(frameIcon.getImage());
-
 
         // Initialize Panels
         pnlSouth = new JPanel();
@@ -29,10 +27,9 @@ public class loginGUI extends JFrame implements ActionListener {
         pnlCenter = new JPanel();
 
         // Load and scale the image
-        ImageIcon originalIcon = new ImageIcon(getClass().getResource("/Logo-cut.png"));
+        ImageIcon originalIcon = new ImageIcon("Logo-cut.png");
         Image scaledImage = originalIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         lblTitle = new JLabel(new ImageIcon(scaledImage), SwingConstants.CENTER);
-
 
         lblPassword = new JLabel("Password:");
         lblUsername = new JLabel("Username:");
