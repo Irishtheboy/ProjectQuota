@@ -15,10 +15,11 @@ public class MainDashboard extends JFrame implements ActionListener {
     JButton btnManageClients, btnCreateQuotation, btnViewSales, btnLogout;
 
     public MainDashboard() {
-        super("Quota Live - Main Dashboard");
+        super("Main Dashboard");
         // Load the frame logo
         ImageIcon frameIcon = new ImageIcon(getClass().getResource("/Logo-cut.png"));
         setIconImage(frameIcon.getImage());
+
 
         // Initialize Panels
         pnlNorth = new JPanel();
@@ -38,18 +39,13 @@ public class MainDashboard extends JFrame implements ActionListener {
 
         btnCreateQuotation.addActionListener(this);
         btnViewSales.addActionListener(this);
-        btnManageClients.addActionListener(this);
-        btnLogout.addActionListener(this);
-        
 
         // Set up the GUI
         setGUI();
     }
 
     public void setGUI() {
-       setExtendedState(JFrame.MAXIMIZED_BOTH);  
-        //setUndecorated(true);  
-        //setSize(900, 900);
+        setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -77,15 +73,28 @@ public class MainDashboard extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnCreateQuotation) {
             dispose();
-            new QuoteForm();  
+            new QuoteForm();  // Assuming you have a QuoteForm class for creating quotations
         } else if (e.getSource() == btnLogout) {
             System.exit(0);
         } else if (e.getSource() == btnViewSales) {
-            JOptionPane.showMessageDialog(null,"Well to be honest i dunno what this is even for lol...");
-        } else if(e.getSource() == btnManageClients){
-            dispose();
-            new ClientsHistory();
+//            // Sample Sales Data
+//            List<Sale> sales = Arrays.asList(
+//                    new Sale(1, "Client A", LocalDate.of(2024, 12, 10), 150.0),
+//                    new Sale(2, "Client B", LocalDate.of(2024, 12, 11), 250.0)
+//            );
+//
+//            // Create and display sales report
+//            ViewSalesReport report = new ViewSalesReport(1, LocalDate.of(2024, 12, 1), LocalDate.of(2024, 12, 31), sales);
+//            JFrame reportFrame = new JFrame("Sales Report");
+//            reportFrame.setLayout(new BorderLayout());
+//            JTextArea reportArea = new JTextArea();
+//            reportArea.setText(report.toString());
+//            reportArea.setEditable(false);
+//            reportFrame.add(new JScrollPane(reportArea), BorderLayout.CENTER);
+//            reportFrame.setSize(400, 300);
+//            reportFrame.setVisible(true);
         }
     }
+
 
 }
